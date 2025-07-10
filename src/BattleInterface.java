@@ -1,2 +1,2 @@
-public class BattleInterface {
+public interface BattleInterface {
 }
