@@ -11,7 +11,7 @@ public class Warrior extends Character implements BattleInterface{
         ✅ Funciones públicas "getter" para acceder a estas variables
         ✅ Funciones públicas "setter" para modificar estas variables
         ✅ Un constructor con parámetros que reciba nombre, hp, stamina y strength
-        🔜 Una función pública que sobrecarga el método attack() implementado en la interfaz Attacker, que recibirá un personaje como parámetro y reducirá su salud en función de la fuerza del ataque
+        🔜 Una función pública que sobrecarga el metodo attack() implementado en la interfaz Attacker, que recibirá un personaje como parámetro y reducirá su salud en función de la fuerza del ataque
     */
 
     // Parámetros
