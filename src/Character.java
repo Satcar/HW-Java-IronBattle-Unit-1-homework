@@ -51,6 +51,6 @@ public abstract class Character {
 
     @Override
     public String toString() {
-        return "asd";
+        return "";
     }
 }
