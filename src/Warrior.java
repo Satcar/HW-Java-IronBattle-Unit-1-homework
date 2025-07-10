@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Random;
 
 public class Warrior extends Character implements BattleInterface{
@@ -43,7 +44,7 @@ public class Warrior extends Character implements BattleInterface{
 
     // Métodos propios de Warrior
     @Override
-    public void attack() {
+    public void attack(Character enemigo) {
 
     }
 }
