@@ -29,7 +29,7 @@ public abstract class Character {
         return hp;
     }
 
-    public boolean isAlive() {
+    public boolean getIsAlive() {
         return isAlive;
     }
 
@@ -37,15 +37,15 @@ public abstract class Character {
         this.name = name;
     }
 
-    public void setHp(int hp) {
-        this.hp = hp;
-        if (this.hp <= 0) {
-            this.hp = 0;
-            this.isAlive = false;
+    public void setHp() {
+          this.hp = hp;
+//        if (this.hp <= 0) {
+//            this.hp = 0;
+//            this.isAlive = false;
         }
     }
 
-    public void setAlive(boolean isAlive) {
+    public void setIsAlive(boolean isAlive) {
         this.isAlive = isAlive;
     }
 
