@@ -1,4 +1,3 @@
-import java.lang.Character;
 import java.util.Random;
 
 public class Warrior extends Character implements BattleInterface {
@@ -62,12 +61,12 @@ public class Warrior extends Character implements BattleInterface {
     @Override
     public void attack(Character enemigo) {
 
-        int hit;
+        int hit = 0;
 
         Random aleatorio = new Random();
-        boolean ataqueFuerte = aleatorio.nextBoolean();
+        boolean strongAttack = aleatorio.nextBoolean();
 
-        if (ataqueFuerte) {
+        if (strongAttack) { // Ataque fuerte
             if (stamina >= 5) {
                 hit = getStrength();
                 stamina -= 5;
@@ -78,17 +77,16 @@ public class Warrior extends Character implements BattleInterface {
                 hit = 0;
                 stamina += 2;
             }
-            if (!ataqueFuerte) { //Ataque débil
-                if (stamina < 5 && stamina > 0) {
-                    hit = getStrength() / 2;
-                    stamina += 1;
-                } else {
-                    hit = 0;
-                    stamina += 2;
-                }
+        }
+        if (!strongAttack) { // Ataque débil
+            if (stamina < 5 && stamina > 0) {
+                hit = getStrength() / 2;
+                stamina += 1;
+            } else {
+                hit = 0;
+                stamina += 2;
             }
         }
-            enemigo.setHP(enemigo.getHP() - hit);
-
+            enemigo.setHp(enemigo.getHp() - hit);
     }
 }

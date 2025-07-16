@@ -1,5 +1,5 @@
 public interface BattleInterface {
 
-    void attack();
+    void attack(Character enemigo);
 
 }
