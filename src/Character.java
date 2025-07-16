@@ -28,7 +28,6 @@ public abstract class Character {
     public int getHp() {
         return hp;
     }
-
     public boolean getIsAlive() {
         return isAlive;
     }
@@ -36,21 +35,18 @@ public abstract class Character {
     public void setName(String name) {
         this.name = name;
     }
-
-    public void setHp() {
-          this.hp = hp;
-//        if (this.hp <= 0) {
-//            this.hp = 0;
-//            this.isAlive = false;
-        }
+    public void setHp(int hp) {
+        this.hp = hp;
     }
-
-    public void setIsAlive(boolean isAlive) {
-        this.isAlive = isAlive;
+    public void setAlive(boolean alive) {
+        isAlive = alive;
     }
 
     @Override
     public String toString() {
+//        if (this.hp <= 0) {
+//            this.hp = 0;
+//            this.isAlive = false;
         return "";
     }
 }
