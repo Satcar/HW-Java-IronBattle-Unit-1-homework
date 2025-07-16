@@ -23,7 +23,7 @@ public class Warrior extends Character implements BattleInterface {
         super(name, hp);
         Random aleatorio = new Random();
         this.stamina = aleatorio.nextInt(41) + 10; // Número aleatorio entre 10-50. ((0 a 40) + 10 = 10 a 50)
-        this.strength = aleatorio.nextInt(10) + 1; // 1-10 ((0 a 9) + 1 = 1 a 10)
+        this.strength = aleatorio.nextInt(10) + 1; // Número aleatorio entre 1-10 ((0 a 9) + 1 = 1 a 10)
     }
 
     //Getters & Setters
@@ -53,7 +53,6 @@ public class Warrior extends Character implements BattleInterface {
     Cada Ataque Débil recupera 1 punto de resistencia.
 
     Si un guerrero no tiene la resistencia suficiente para realizar un Ataque Fuerte, hará un Ataque Débil en su lugar.
-
     Si un guerrero no tiene la resistencia suficiente ni siquiera para hacer un Ataque Débil, no infligirá daño y recuperará 2 puntos de resistencia.
     */
 
