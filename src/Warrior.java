@@ -11,7 +11,7 @@ public class Warrior extends Character implements BattleInterface {
         ✅ Funciones públicas "getter" para acceder a estas variables
         ✅ Funciones públicas "setter" para modificar estas variables
         ✅ Un constructor con parámetros que reciba nombre, hp, stamina y strength
-        🔜 Una función pública que sobrecarga el metodo attack() implementado en la interfaz Attacker, que recibirá un personaje como parámetro y reducirá su salud en función de la fuerza del ataque
+        ✅ Una función pública que sobrecarga el metodo attack() implementado en la interfaz Attacker, que recibirá un personaje como parámetro y reducirá su salud en función de la fuerza del ataque
     */
 
     // Parámetros
@@ -43,13 +43,12 @@ public class Warrior extends Character implements BattleInterface {
         this.strength = strength;
     }
 
-    // Métodos propios de Warrior
     /*
     Guerrero:
 
     Los guerreros son personajes fuertes y bien armados que se enfocan en el atributo de fuerza.
     En cada ronda, un guerrero realizará aleatoriamente un Ataque Fuerte o un Ataque Débil.
-    El daño de un Ataque Fuerte es igual a su fuerza, y cada golpe reducirá su resistencia en 5 puntos.
+    El daño de un Ataque Fuerte es igual a su fuerza (strength), y cada golpe reducirá su resistencia (stamina) en 5 puntos.
     El daño de un Ataque Débil es la mitad de su fuerza (truncando los decimales).
     Cada Ataque Débil recupera 1 punto de resistencia.
 
@@ -58,35 +57,35 @@ public class Warrior extends Character implements BattleInterface {
     Si un guerrero no tiene la resistencia suficiente ni siquiera para hacer un Ataque Débil, no infligirá daño y recuperará 2 puntos de resistencia.
     */
 
+    // Métodos propios de Warrior
     @Override
     public void attack(Character enemigo) {
 
-        int hit = 0;
+        int hit;
 
         Random aleatorio = new Random();
-        boolean strongAttack = aleatorio.nextBoolean();
+        boolean isStrongAttack = aleatorio.nextBoolean();
 
-        if (strongAttack) { // Ataque fuerte
+        if (isStrongAttack) { // Seleccionado aleatoriamente: ataque fuerte
             if (stamina >= 5) {
                 hit = getStrength();
                 stamina -= 5;
-            } else if (stamina >= 1) {
+            } else if (stamina >= 1) { // Si no puede ataque fuerte, intenta realizar ataque débil
                 hit = getStrength() / 2;
                 stamina += 1;
-            } else {
+            } else { // Si no puede realizar ataque débil, no ataca
+                hit = 0;
+                stamina += 2;
+            }
+        } else { // Seleccionado aleatoriamente: ataque débil
+            if (stamina >= 1) {
+                hit = getStrength() / 2;
+                stamina += 1;
+            } else { // Si no puede realizar ataque débil, no ataca
                 hit = 0;
                 stamina += 2;
             }
         }
-        if (!strongAttack) { // Ataque débil
-            if (stamina < 5 && stamina > 0) {
-                hit = getStrength() / 2;
-                stamina += 1;
-            } else {
-                hit = 0;
-                stamina += 2;
-            }
-        }
-            enemigo.setHp(enemigo.getHp() - hit);
+        enemigo.setHp(enemigo.getHp() - hit);
     }
 }
