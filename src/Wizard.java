@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Wizard extends Character implements BattleInterface {
+public class Wizard extends Character implements Attacker {
 
     /*
     Clase Mago (Wizard)
@@ -24,6 +24,7 @@ public class Wizard extends Character implements BattleInterface {
     public Wizard(String name, int hp, int mana, int intelligence) {
         super(name, hp);
         Random aleatorio = new Random();
+        this.setHp(aleatorio.nextInt(51) + 50);
         this.mana = aleatorio.nextInt(41) + 10; // Número aleatorio entre 10-50. ((0 a 40) + 10 = 10 a 50)
         this.intelligence = aleatorio.nextInt(50) + 1; // Número aleatorio entre 1-50 ((0 a 49) + 1 = 1 a 50)
     }
@@ -84,5 +85,14 @@ public class Wizard extends Character implements BattleInterface {
             }
         }
         enemigo.setHp(enemigo.getHp() - hit);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "Wizard{" +
+                "mana=" + mana +
+                ", intelligence=" + intelligence +
+                '}';
     }
 }

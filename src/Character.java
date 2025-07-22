@@ -15,6 +15,12 @@ public abstract class Character {
         this.isAlive = true;
     }
 
+    public Character(String name) {
+        this.id = UUID.randomUUID().toString();
+        this.name = name;
+        this.isAlive = true;
+    }
+
     // SETTERS Y GETTERS
 
     public String getId() {
@@ -44,9 +50,11 @@ public abstract class Character {
 
     @Override
     public String toString() {
-//        if (this.hp <= 0) {
-//            this.hp = 0;
-//            this.isAlive = false;
-        return "";
+        return "Character{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", hp=" + hp +
+                ", isAlive=" + isAlive +
+                '}';
     }
 }

@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Warrior extends Character implements BattleInterface {
+public class Warrior extends Character implements Attacker {
     /*
     Clase Guerrero (Warrior)
     Esta clase deriva de la clase Character. Un Guerrero es un Personaje que lucha atacando. Los ataques infligen daño y, para realizar uno, se necesita resistencia (stamina).
@@ -22,9 +22,20 @@ public class Warrior extends Character implements BattleInterface {
     public Warrior(String name, int hp) {
         super(name, hp);
         Random aleatorio = new Random();
+        this.setHp(aleatorio.nextInt(101) + 100);
         this.stamina = aleatorio.nextInt(41) + 10; // Número aleatorio entre 10-50. ((0 a 40) + 10 = 10 a 50)
         this.strength = aleatorio.nextInt(10) + 1; // Número aleatorio entre 1-10 ((0 a 9) + 1 = 1 a 10)
     }
+
+    public Warrior(String name) {
+        super(name);
+        Random aleatorio = new Random();
+        this.setHp(aleatorio.nextInt(101) + 100);
+        this.stamina = aleatorio.nextInt(41) + 10; // Número aleatorio entre 10-50. ((0 a 40) + 10 = 10 a 50)
+        this.strength = aleatorio.nextInt(10) + 1; // Número aleatorio entre 1-10 ((0 a 9) + 1 = 1 a 10)
+    }
+
+
 
     //Getters & Setters
     public int getStamina() {
@@ -86,5 +97,14 @@ public class Warrior extends Character implements BattleInterface {
             }
         }
         enemigo.setHp(enemigo.getHp() - hit);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+
+                "Warrior{" +
+                "stamina=" + stamina +
+                ", strength=" + strength +
+                '}';
     }
 }
