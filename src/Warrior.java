@@ -22,8 +22,8 @@ public class Warrior extends Character implements Attacker {
     public Warrior(String name, int hp) {
         super(name, hp);
         Random aleatorio = new Random();
-        this.setHp(aleatorio.nextInt(101) + 100);
-        this.stamina = aleatorio.nextInt(41) + 10; // Número aleatorio entre 10-50. ((0 a 40) + 10 = 10 a 50)
+        this.setHp(aleatorio.nextInt(101) + 100); // Número aleatorio entre 100-200 ((0 a 100) + 100 = 100 a 200)
+        this.stamina = aleatorio.nextInt(41) + 10; // Número aleatorio entre 10-50 ((0 a 40) + 10 = 10 a 50)
         this.strength = aleatorio.nextInt(10) + 1; // Número aleatorio entre 1-10 ((0 a 9) + 1 = 1 a 10)
     }
 
