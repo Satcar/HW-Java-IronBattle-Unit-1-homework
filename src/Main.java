@@ -1,7 +1,8 @@
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
 
         /*
@@ -36,64 +37,60 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
+        int menuChoice;
+        do {
+            System.out.println("""
+                    ----- MENÚ -----
+                    1. Todo aleatorio
+                    2. Selección manual de personajes
+                    3. Añadir personajes desde CSV
+                    4. Salir
+                    """);
+            System.out.print("Elige la opción: ");
+            menuChoice = sc.nextInt();
+            sc.nextLine();
 
+            switch (menuChoice) {
+                case 1: // Crear personajes aleatorios
+                    Random random = new Random();
+                    int guerrero = 1;
+                    int mago = 2;
+                    ArrayList<Character> characters = new ArrayList();
+                    for (int i = 0; i < 2; i++) {
+                        int numeroAleatorio = random.nextInt(2) + 1;
+                        if (numeroAleatorio == guerrero) {
+                            Warrior warrior = new Warrior("Aragón");
+                            characters.add(warrior);
+                        } else if (numeroAleatorio == mago) {
+                            Wizard wizard = new Wizard("Gandalf");
+                            characters.add(wizard);
+                        }
+                    }
+                    System.out.println(characters.get(0).toString());
+                    System.out.println(characters.get(1).toString());
 
-//        //pedir params un mago (nombre, hp)
-//        System.out.print("Nombre para el mago: ");
-//        String nombre1 = sc.nextLine();
-//        System.out.print("HP para el mago: ");
-//        int hp1;
-//        do {
-//            hp1 = sc.nextInt();
-//            sc.nextLine();
-//            if (hp1 < 50 || hp1 > 100) {
-//                System.out.println("Vida incorrecta, introduce un valor entre 50-100");
-//            }
-//
-//
-//        } while (hp1 < 50 || hp1 > 100);
-//
-//
-//        Warrior guerrero1 = new Warrior(nombre1, hp1);
-//
-//        System.out.println("Nombre: " + nombre1 + " vida: " + hp1);
+                    battle(characters.get(0), characters.get(1));
+                    break;
 
-//        menu
-//         1. crear guerro
-//         2. crear mago
-//         3. salir
-//
-//        int menuChoice;
-//        do {
-//            System.out.println("""
-//
-//                    ----- MENU -----
-//                    1. Crear guerrero
-//                    2. Crear wizard
-//                    3. Salir
-//                    """);
-//            menuChoice = sc.nextInt();
-//            sc.nextLine();
-//            switch (menuChoice) {
-//                case 0:
-//                    // crear dos personajes aleatorios
-//                    break;
-//
-//                case 1:
-//                    // crear guerrero
-//                    break;
-//                case 2:
-//                    // crear mago
-//                    break;
-//
-//                default:
-//                    // sout con mensaje de error o un throw
-//            }
-//        } while (menuChoice != 3);
-//    }
-//        Warrior w1 = new Warrior("Asd");
-//        System.out.println(w1);
-//        System.out.println("Nombre: " + w1.getName() + " Stamina: " + w1.getStamina());
+                case 2: // Selección manual personajes
+
+                    break;
+                case 3: // Selección personajes desde archivo CSV
+
+                    break;
+
+                case 4:
+                    System.out.println("Salir programa");
+                    break;
+                default:
+                    System.out.println("Opción no valida. Vuelve a intentarlo");
+                    break;
+
+            }
+        } while (menuChoice != 4) ;
+    }
+
+    private static void battle(Character character, Character character1) {
 
     }
 }

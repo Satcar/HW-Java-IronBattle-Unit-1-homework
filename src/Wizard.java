@@ -21,6 +21,15 @@ public class Wizard extends Character implements Attacker {
     private int intelligence; // Mide como de fuerte es el hechizo
 
     // Constructores
+
+    public Wizard(String name) {
+        super(name);
+        Random aleatorio = new Random();
+        this.setHp(aleatorio.nextInt(51) + 50); // Número aleatorio entre 50-100 ((0 a 50) + 50 = 50 a 100)
+        this.mana = aleatorio.nextInt(41) + 10; // Número aleatorio entre 10-50 ((0 a 40) + 10 = 10 a 50)
+        this.intelligence = aleatorio.nextInt(50) + 1; // Número aleatorio entre 1-50 ((0 a 49) + 1 = 1 a 50)
+    }
+
     public Wizard(String name, int hp, int mana, int intelligence) {
         super(name, hp);
         Random aleatorio = new Random();
