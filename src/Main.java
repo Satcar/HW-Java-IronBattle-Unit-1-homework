@@ -59,17 +59,18 @@ public class Main {
                     for (int i = 0; i < 2; i++) {
                         int numeroAleatorio = random.nextInt(2) + 1;
                         if (numeroAleatorio == guerrero) {
-                            Warrior warrior = new Warrior("Aragón");
+                            Warrior warrior = new Warrior("Guerrero");
                             characters.add(warrior);
                         } else if (numeroAleatorio == mago) {
-                            Wizard wizard = new Wizard("Gandalf");
+                            Wizard wizard = new Wizard("Mago");
                             characters.add(wizard);
                         }
                     }
                     System.out.println(characters.get(0).toString());
                     System.out.println(characters.get(1).toString());
 
-                    battle(characters.get(0), characters.get(1));
+                    Battle battle = new Battle();
+                    battle.iniciarBatalla(characters.get(0), characters.get(1));
                     break;
 
                 case 2: // Selección manual personajes
