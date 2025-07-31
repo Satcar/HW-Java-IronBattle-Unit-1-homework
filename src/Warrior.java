@@ -107,6 +107,6 @@ public class Warrior extends Character implements Attacker {
 
     @Override
     public String toString() {
-        return getName() + " (GUERRERO): HP: " + getHp() + " | Stamina: " + getStamina() + " | Strenght: " + getStrength();
+        return getName() + " (GUERRERO/A): HP: " + getHp() + " | Stamina: " + getStamina() + " | Strenght: " + getStrength();
     }
 }

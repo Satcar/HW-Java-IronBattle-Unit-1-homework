@@ -1,6 +1,6 @@
 
 public class Battle {
-    public void iniciarBatalla(Character c1, Character c2) {
+    public void iniciarBatalla(Character c1, Character c2) throws InterruptedException {
         System.out.println("\n--- COMIENZA LA BATALLA ---");
         Warrior guerrero1 = null;
         Wizard mago1 = null;
@@ -27,25 +27,25 @@ public class Battle {
             String resultadoAtaque2 = c2.attack(c1);
 
             if (guerrero1 != null) {
-                System.out.print("Jugador 1 -warrior- " +resultadoAtaque1);
+                System.out.println("--------------------------------------------------");
+                System.out.print(c1.getName() + " (GUERRERO/A) " +resultadoAtaque1);
                 System.out.println("\n---> HP: " + guerrero1.getHp() + " | Stamina: " + guerrero1.getStamina() + " | Strenght: " + guerrero1.getStrength());
             } else if (mago1 != null) {
-                System.out.print("Jugador 1 -wizard- " +resultadoAtaque1);
+                System.out.println("--------------------------------------------------");
+                System.out.print(c1.getName() + " (MAGO/A) " +resultadoAtaque1);
                 System.out.println("\n---> HP: " + mago1.getHp() + " | Maná: " + mago1.getMana() + " | Intelligence: " + mago1.getIntelligence());
             }
             if (guerrero2 != null) {
-                System.out.print("\nJugador 2 -warrior- " + resultadoAtaque2);
+                System.out.print("\n" + c2.getName() + " (GUERRERO/A) " + resultadoAtaque2);
                 System.out.println("\n--->: HP: " + guerrero2.getHp() + " | Stamina: " + guerrero2.getStamina() + " | Strenght: " + guerrero2.getStrength());
+                System.out.println("--------------------------------------------------");
             } else if (mago2 != null) {
-                System.out.print("\nJugador 2 -wizard- " + resultadoAtaque2);
+                System.out.print("\n" + c2.getName() + " (MAGO/A) " + resultadoAtaque2);
                 System.out.println("\n---> HP: " + mago2.getHp() + " | Maná: " + mago2.getMana() + " | Intelligence: " + mago2.getIntelligence());
+                System.out.println("--------------------------------------------------");
             }
 
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
+            Thread.sleep(1000);
 
             ronda++;
         }
@@ -53,9 +53,9 @@ public class Battle {
         if (c1.getHp() <= 0 && c2.getHp() <= 0) {
             System.out.println("\n¡Empate! Ambos personajes han caído.\n");
         } else if (c1.getHp() <= 0) {
-            System.out.println("\n¡" + c2.getName() + " gana la batalla!\n");
+            System.out.println("\n¡" + c2.getName() + " gana la batalla!\n\n");
         } else {
-            System.out.println("\n¡" + c1.getName() + " gana la batalla!\n");
+            System.out.println("\n¡" + c1.getName() + " gana la batalla!\n\n");
         }
     }
 }
