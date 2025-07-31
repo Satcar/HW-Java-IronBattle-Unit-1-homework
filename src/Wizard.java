@@ -105,6 +105,6 @@ public class Wizard extends Character implements Attacker {
 
     @Override
     public String toString() {
-        return getName() + " (MAGO/A): HP: " + getHp() + " | Mana: " + getMana() + " | Intelligence: " + getIntelligence();
+        return getName() + " (MAGO/A): HP: " + getHp() + " | Maná: " + getMana() + " | Inteligencia: " + getIntelligence();
     }
 }

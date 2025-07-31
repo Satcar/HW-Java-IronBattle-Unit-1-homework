@@ -21,7 +21,7 @@ public class Battle {
         int ronda = 1;
 
         while (c1.getIsAlive() && c2.getIsAlive()) {
-            System.out.println("\n>>> Ronda " + ronda + " <<<");
+            System.out.println("\n>>> RONDA " + ronda + " <<<");
 
             String resultadoAtaque1 = c1.attack(c2);
             String resultadoAtaque2 = c2.attack(c1);
@@ -29,19 +29,19 @@ public class Battle {
             if (guerrero1 != null) {
                 System.out.println("--------------------------------------------------");
                 System.out.print(c1.getName() + " (GUERRERO/A) " +resultadoAtaque1);
-                System.out.println("\n---> HP: " + guerrero1.getHp() + " | Stamina: " + guerrero1.getStamina() + " | Strenght: " + guerrero1.getStrength());
+                System.out.println("\nHP: " + guerrero1.getHp() + " | Aguante: " + guerrero1.getStamina() + " | Fuerza: " + guerrero1.getStrength());
             } else if (mago1 != null) {
                 System.out.println("--------------------------------------------------");
                 System.out.print(c1.getName() + " (MAGO/A) " +resultadoAtaque1);
-                System.out.println("\n---> HP: " + mago1.getHp() + " | Maná: " + mago1.getMana() + " | Intelligence: " + mago1.getIntelligence());
+                System.out.println("\nHP: " + mago1.getHp() + " | Maná: " + mago1.getMana() + " | Inteligencia: " + mago1.getIntelligence());
             }
             if (guerrero2 != null) {
                 System.out.print("\n" + c2.getName() + " (GUERRERO/A) " + resultadoAtaque2);
-                System.out.println("\n--->: HP: " + guerrero2.getHp() + " | Stamina: " + guerrero2.getStamina() + " | Strenght: " + guerrero2.getStrength());
+                System.out.println("\nHP: " + guerrero2.getHp() + " | Aguante: " + guerrero2.getStamina() + " | Fuerza: " + guerrero2.getStrength());
                 System.out.println("--------------------------------------------------");
             } else if (mago2 != null) {
                 System.out.print("\n" + c2.getName() + " (MAGO/A) " + resultadoAtaque2);
-                System.out.println("\n---> HP: " + mago2.getHp() + " | Maná: " + mago2.getMana() + " | Intelligence: " + mago2.getIntelligence());
+                System.out.println("\nHP: " + mago2.getHp() + " | Maná: " + mago2.getMana() + " | Inteligencia: " + mago2.getIntelligence());
                 System.out.println("--------------------------------------------------");
             }
 

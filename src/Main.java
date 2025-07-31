@@ -87,15 +87,15 @@ public class Main {
                     nombreJugador1 = sc.nextLine();
 
                     while (true) {
-                        System.out.print("Selecciona el tipo de jugador 1 (warrior/wizard): ");
+                        System.out.print("Selecciona el tipo de jugador 1 (guerrero/mago): ");
                         tipoJugador1 = sc.nextLine().toLowerCase();
 
-                        if (tipoJugador1.equals("warrior")) {
+                        if (tipoJugador1.equals("guerrero")) {
                             jugador1 = new Warrior(nombreJugador1);
 
                             // HP
                             while (true) {
-                                System.out.print("Introduce la vida (HP) del warrior (100-200): ");
+                                System.out.print("Introduce la vida (HP) del guerrero (100-200): ");
                                 if (sc.hasNextInt()) {
                                     int hp = sc.nextInt();
                                     sc.nextLine(); // limpiar buffer
@@ -113,7 +113,7 @@ public class Main {
 
                             // Stamina
                             while (true) {
-                                System.out.print("Introduce la stamina (10-50): ");
+                                System.out.print("Introduce el aguante (10-50): ");
                                 if (sc.hasNextInt()) {
                                     int stamina = sc.nextInt();
                                     sc.nextLine();
@@ -121,7 +121,7 @@ public class Main {
                                         ((Warrior) jugador1).setStamina(stamina);
                                         break;
                                     } else {
-                                        System.out.println("La stamina debe estar entre 10 y 50.");
+                                        System.out.println("El aguante debe estar entre 10 y 50.");
                                     }
                                 } else {
                                     System.out.println("Entrada no válida. Introduce un número.");
@@ -131,7 +131,7 @@ public class Main {
 
                             // Strength
                             while (true) {
-                                System.out.print("Introduce el strength (1-10): ");
+                                System.out.print("Introduce la fuerza (1-10): ");
                                 if (sc.hasNextInt()) {
                                     int strength = sc.nextInt();
                                     sc.nextLine();
@@ -139,7 +139,7 @@ public class Main {
                                         ((Warrior) jugador1).setStrength(strength);
                                         break;
                                     } else {
-                                        System.out.println("El strength debe estar entre 1 y 10.");
+                                        System.out.println("La fuerza debe estar entre 1 y 10.");
                                     }
                                 } else {
                                     System.out.println("Entrada no válida. Introduce un número");
@@ -148,12 +148,12 @@ public class Main {
                             }
                             break;
 
-                        } else if (tipoJugador1.equals("wizard")) {
+                        } else if (tipoJugador1.equals("mago")) {
                             jugador1 = new Wizard(nombreJugador1);
 
                             // HP
                             while (true) {
-                                System.out.print("Introduce la vida (HP) del wizard (50-100): ");
+                                System.out.print("Introduce la vida (HP) del mago (50-100): ");
                                 if (sc.hasNextInt()) {
                                     int hp = sc.nextInt();
                                     sc.nextLine(); // limpiar buffer
@@ -171,7 +171,7 @@ public class Main {
 
                             // Mana
                             while (true) {
-                                System.out.print("Introduce el mana (10-50): ");
+                                System.out.print("Introduce el maná (10-50): ");
                                 if (sc.hasNextInt()) {
                                     int mana = sc.nextInt();
                                     sc.nextLine();
@@ -179,7 +179,7 @@ public class Main {
                                         ((Wizard) jugador1).setMana(mana);
                                         break;
                                     } else {
-                                        System.out.println("El mana debe estar entre 10 y 50.");
+                                        System.out.println("El maná debe estar entre 10 y 50.");
                                     }
                                 } else {
                                     System.out.println("Entrada no válida. Introduce un número.");
@@ -189,7 +189,7 @@ public class Main {
 
                             // Intelligence
                             while (true) {
-                                System.out.print("Introduce la intelligence (1-50): ");
+                                System.out.print("Introduce la inteligencia (1-50): ");
                                 if (sc.hasNextInt()) {
                                     int intelligence = sc.nextInt();
                                     sc.nextLine();
@@ -197,7 +197,7 @@ public class Main {
                                         ((Wizard) jugador1).setIntelligence(intelligence);
                                         break;
                                     } else {
-                                        System.out.println("La intelligence debe estar entre 1 y 50.");
+                                        System.out.println("La inteligencia debe estar entre 1 y 50.");
                                     }
                                 } else {
                                     System.out.println("Entrada no válida. Introduce un número.");
@@ -221,15 +221,15 @@ public class Main {
                     nombreJugador2 = sc.nextLine();
 
                     while (true) {
-                        System.out.print("Selecciona el tipo de jugador 2 (warrior/wizard): ");
+                        System.out.print("Selecciona el tipo de jugador 2 (guerrero/mago): ");
                         tipoJugador2 = sc.nextLine().toLowerCase();
 
-                        if (tipoJugador2.equals("warrior")) {
+                        if (tipoJugador2.equals("guerrero")) {
                             jugador2 = new Warrior(nombreJugador2);
 
                             // HP
                             while (true) {
-                                System.out.print("Introduce la vida (HP) del warrior (100-200): ");
+                                System.out.print("Introduce la vida (HP) del guerrero (100-200): ");
                                 if (sc.hasNextInt()) {
                                     int hp = sc.nextInt();
                                     sc.nextLine();
@@ -247,7 +247,7 @@ public class Main {
 
                             // Stamina
                             while (true) {
-                                System.out.print("Introduce la stamina (10-50): ");
+                                System.out.print("Introduce el aguante (10-50): ");
                                 if (sc.hasNextInt()) {
                                     int stamina = sc.nextInt();
                                     sc.nextLine();
@@ -255,7 +255,7 @@ public class Main {
                                         ((Warrior) jugador2).setStamina(stamina);
                                         break;
                                     } else {
-                                        System.out.println("La stamina debe estar entre 10 y 50.");
+                                        System.out.println("El aguante debe estar entre 10 y 50.");
                                     }
                                 } else {
                                     System.out.println("Entrada no válida. Introduce un número.");
@@ -265,7 +265,7 @@ public class Main {
 
                             // Strength
                             while (true) {
-                                System.out.print("Introduce el strength (1-10): ");
+                                System.out.print("Introduce la fuerza (1-10): ");
                                 if (sc.hasNextInt()) {
                                     int strength = sc.nextInt();
                                     sc.nextLine();
@@ -273,7 +273,7 @@ public class Main {
                                         ((Warrior) jugador2).setStrength(strength);
                                         break;
                                     } else {
-                                        System.out.println("El strength debe estar entre 1 y 10.");
+                                        System.out.println("La fuerza debe estar entre 1 y 10.");
                                     }
                                 } else {
                                     System.out.println("Entrada no válida. Introduce un número.");
@@ -283,12 +283,12 @@ public class Main {
 
                             break;
 
-                        } else if (tipoJugador2.equals("wizard")) {
+                        } else if (tipoJugador2.equals("mago")) {
                             jugador2 = new Wizard(nombreJugador2);
 
                             // HP
                             while (true) {
-                                System.out.print("Introduce la vida (HP) del wizard (50-100): ");
+                                System.out.print("Introduce la vida (HP) del mago (50-100): ");
                                 if (sc.hasNextInt()) {
                                     int hp = sc.nextInt();
                                     sc.nextLine();
@@ -306,7 +306,7 @@ public class Main {
 
                             // Mana
                             while (true) {
-                                System.out.print("Introduce el mana (10-50): ");
+                                System.out.print("Introduce el maná (10-50): ");
                                 if (sc.hasNextInt()) {
                                     int mana = sc.nextInt();
                                     sc.nextLine();
@@ -314,7 +314,7 @@ public class Main {
                                         ((Wizard) jugador2).setMana(mana);
                                         break;
                                     } else {
-                                        System.out.println("El mana debe estar entre 10 y 50.");
+                                        System.out.println("El maná debe estar entre 10 y 50.");
                                     }
                                 } else {
                                     System.out.println("Entrada no válida. Introduce un número.");
@@ -324,7 +324,7 @@ public class Main {
 
                             // Intelligence
                             while (true) {
-                                System.out.print("Introduce la intelligence (1-50): ");
+                                System.out.print("Introduce la inteligencia (1-50): ");
                                 if (sc.hasNextInt()) {
                                     int intelligence = sc.nextInt();
                                     sc.nextLine();
@@ -332,7 +332,7 @@ public class Main {
                                         ((Wizard) jugador2).setIntelligence(intelligence);
                                         break;
                                     } else {
-                                        System.out.println("La intelligence debe estar entre 1 y 50.");
+                                        System.out.println("La inteligencia debe estar entre 1 y 50.");
                                     }
                                 } else {
                                     System.out.println("Entrada no válida. Introduce un número.");
@@ -376,11 +376,11 @@ public class Main {
 
                     break;
                 case 3: // Selección personajes desde archivo CSV
-
+                    System.out.println("\nEn construcción...\n\n");
                     break;
 
                 case 4:
-                    System.out.println("Salir programa");
+                    System.out.println("Has salido del programa. ¡Hasta pronto!");
                     break;
                 default:
                     System.out.println("Opción no valida. Vuelve a intentarlo\n");
