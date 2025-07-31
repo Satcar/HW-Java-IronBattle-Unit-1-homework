@@ -42,6 +42,9 @@ public abstract class Character implements Attacker{
         this.name = name;
     }
     public void setHp(int hp) {
+        if (hp < 0){
+            hp = 0;
+        }
         this.hp = hp;
         this.isAlive = hp > 0;
     }

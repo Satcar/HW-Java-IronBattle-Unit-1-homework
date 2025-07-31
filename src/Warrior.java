@@ -69,10 +69,10 @@ public class Warrior extends Character implements Attacker {
 
     // Métodos propios de Warrior
     @Override
-    public void attack(Character enemigo) {
+    public String attack(Character enemigo) {
 
         int hit;
-
+        String tipoAtaque;
         Random aleatorio = new Random();
         boolean isStrongAttack = aleatorio.nextBoolean();
 
@@ -80,31 +80,33 @@ public class Warrior extends Character implements Attacker {
             if (stamina >= 5) {
                 hit = getStrength();
                 stamina -= 5;
+                tipoAtaque = "utilizó ataque fuerte";
             } else if (stamina >= 1) { // Si no puede ataque fuerte, intenta realizar ataque débil
                 hit = getStrength() / 2;
                 stamina += 1;
+                tipoAtaque = "utilizó ataque débil";
             } else { // Si no puede realizar ataque débil, no ataca
                 hit = 0;
                 stamina += 2;
+                tipoAtaque = "no tiene stamina suficiente, no puede atacar";
             }
         } else { // Seleccionado aleatoriamente: ataque débil
             if (stamina >= 1) {
                 hit = getStrength() / 2;
                 stamina += 1;
+                tipoAtaque = "utilizó ataque débil";
             } else { // Si no puede realizar ataque débil, no ataca
                 hit = 0;
                 stamina += 2;
+                tipoAtaque = "no tiene stamina suficiente, no puede atacar";
             }
         }
         enemigo.setHp(enemigo.getHp() - hit);
+        return tipoAtaque + ". Causó: " + hit + " daño.";
     }
 
     @Override
     public String toString() {
-        return super.toString()+
-                "Warrior{" +
-                "stamina=" + stamina +
-                ", strength=" + strength +
-                '}';
+        return getName() + " (GUERRERO): HP: " + getHp() + " | Stamina: " + getStamina() + " | Strenght: " + getStrength();
     }
 }

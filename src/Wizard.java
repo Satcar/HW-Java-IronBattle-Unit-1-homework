@@ -67,9 +67,10 @@ public class Wizard extends Character implements Attacker {
 
     // Métodos propios de Wizard
     @Override
-    public void attack(Character enemigo) {
-        int hit;
+    public String attack(Character enemigo) {
 
+        int hit;
+        String tipoAtaque;
         Random aleatorio = new Random();
         boolean fireball = aleatorio.nextBoolean();
 
@@ -77,31 +78,33 @@ public class Wizard extends Character implements Attacker {
             if (mana >= 5) {
                 hit = getIntelligence();
                 mana -= 5;
+                tipoAtaque = "utilizó bola de fuego";
             } else if (mana >= 1) { // Si no puede bola de fuego, intenta realizar golpe de bastón
                 hit = 2;
                 mana += 1;
+                tipoAtaque = "utilizó golpe de bastón";
             } else { // Si no puede realizar golpe de bastón, no ataca
                 hit = 0;
                 mana += 2;
+                tipoAtaque = "no tiene maná suficiente, no puede atacar";
             }
         } else { // Seleccionado aleatoriamente: golpe de bastón
             if (mana >= 1) {
                 hit = 2;
                 mana += 1;
+                tipoAtaque = "utilizó golpe de bastón";
             } else { // Si no puede realizar golpe de bastón, no ataca
                 hit = 0;
                 mana += 2;
+                tipoAtaque = "no tiene maná suficiente, no puede atacar";
             }
         }
         enemigo.setHp(enemigo.getHp() - hit);
+        return tipoAtaque + ". Causó: " + hit + " daño.";
     }
 
     @Override
     public String toString() {
-        return super.toString() +
-                "Wizard{" +
-                "mana=" + mana +
-                ", intelligence=" + intelligence +
-                '}';
+        return getName() + " (MAGO): HP: " + getHp() + " | Mana: " + getMana() + " | Intelligence: " + getIntelligence();
     }
 }

@@ -37,6 +37,8 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
+        //FIXME: pendiente introducción para que no salte el menú directamente
+
         int menuChoice;
         do {
             System.out.println("""
@@ -46,26 +48,28 @@ public class Main {
                     3. Añadir personajes desde CSV
                     4. Salir
                     """);
-            System.out.print("Elige la opción: ");
+            System.out.print("Elige una opción: ");
             menuChoice = sc.nextInt();
             sc.nextLine();
 
             switch (menuChoice) {
                 case 1: // Crear personajes aleatorios
                     Random random = new Random();
-                    int guerrero = 1;
-                    int mago = 2;
-                    ArrayList<Character> characters = new ArrayList();
+                    ArrayList<Character> characters = new ArrayList<>();
                     for (int i = 0; i < 2; i++) {
                         int numeroAleatorio = random.nextInt(2) + 1;
-                        if (numeroAleatorio == guerrero) {
-                            Warrior warrior = new Warrior("Guerrero");
+                        if (numeroAleatorio == 1) {
+                            Warrior warrior = new Warrior("Jugador " + (i + 1));
                             characters.add(warrior);
-                        } else if (numeroAleatorio == mago) {
-                            Wizard wizard = new Wizard("Mago");
+                        } else if (numeroAleatorio == 2) {
+                            Wizard wizard = new Wizard("Jugador " + (i + 1));
                             characters.add(wizard);
                         }
                     }
+                    for (int i = 0; i < 50; i++) {
+                        System.out.println();
+                    }
+                    System.out.println("--- PARTICIPANTES ---");
                     System.out.println(characters.get(0).toString());
                     System.out.println(characters.get(1).toString());
 
@@ -84,7 +88,7 @@ public class Main {
                     System.out.println("Salir programa");
                     break;
                 default:
-                    System.out.println("Opción no valida. Vuelve a intentarlo");
+                    System.out.println("Opción no valida. Vuelve a intentarlo\n");
                     break;
 
             }

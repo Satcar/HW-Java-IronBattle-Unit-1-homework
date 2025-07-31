@@ -1,5 +1,5 @@
 public interface Attacker {
 
-   void attack(Character enemigo);
+   String attack(Character enemigo);
 
 }
